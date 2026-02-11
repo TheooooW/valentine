@@ -47,14 +47,20 @@
         }
         
         #start-btn {
-            background: #e91e63; color: white;
-            padding: 15px 40px; font-size: 1.5rem; border: none;
-            border-radius: 50px; cursor: pointer;
+            /* RESET global button sizes so this one can be big */
+            width: auto; 
+            height: auto;
+            
+            background: #e91e63; 
+            color: white;
+            padding: 15px 40px; 
+            font-size: 1.5rem; 
+            border: none;
+            border-radius: 50px; 
+            cursor: pointer;
             box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
             transition: transform 0.2s;
-            
-            /* Ensure the button itself doesn't have weird margins */
-            margin: 0; 
+            margin-top: 20px;
         }
         #start-btn:hover { transform: scale(1.05); }
 
@@ -274,3 +280,4 @@
 </body>
 
 </html>
+
