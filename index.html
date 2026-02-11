@@ -23,13 +23,27 @@
         /* --- START SCREEN (New!) --- */
         #start-screen {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0; left: 0; 
+            width: 100%; 
+            height: 100%;
             background: #fce4ec;
+            
+            /* This 3-combo ensures perfect centering */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center;     /* Centers items horizontally */
+            justify-content: center; /* Centers items vertically */
+            text-align: center;      /* Centers text inside the items */
+            
             z-index: 50;
+        }
+
+        /* Specific style for the Start Screen Text to ensure it doesn't drift */
+        #start-screen h1 {
+            margin: 0 0 20px 0; /* Remove top margin, add bottom space */
+            padding: 0 20px;    /* Prevent text from touching screen edges on mobile */
+            width: 100%;        /* Span full width so centering works */
+            box-sizing: border-box;
         }
         
         #start-btn {
@@ -38,6 +52,9 @@
             border-radius: 50px; cursor: pointer;
             box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
             transition: transform 0.2s;
+            
+            /* Ensure the button itself doesn't have weird margins */
+            margin: 0; 
         }
         #start-btn:hover { transform: scale(1.05); }
 
@@ -127,10 +144,10 @@
 <body>
 
     <audio id="bg-music" loop>
-        <source src="quiz.mp3" type="audio/mpeg">
+        <source src="bgmusic.mp3" type="audio/mpeg">
     </audio>
     <audio id="win-music">
-        <source src="yay.mp3" type="audio/mpeg">
+        <source src="main.mp3" type="audio/mpeg">
     </audio>
 
     <div id="start-screen">
@@ -183,8 +200,8 @@
 
         // --- GAME DATA ---
         const stages = [
-            { name: "Conrad", img: "conrad.jpg", text: "Will you be Conrad's Valentine?", evasive: "yes" },
-            { name: "Kazuha", img: "kazuha.jpg", text: "Okay... how about Kazuha?", evasive: "yes" },
+            { name: "Conrad", img: "Conrad_Fisher.jpg", text: "Will you be Conrad's Valentine?", evasive: "yes" },
+            { name: "Manny", img: "Manny_Jacinto.jpg", text: "Okay... how about the Dumb Hot Manny?", evasive: "yes" },
             { name: "Me", img: "me.jpg", text: "Fine. Will you be MY Valentine?", evasive: "no" }
         ];
 
@@ -255,4 +272,5 @@
         loadStage(0);
     </script>
 </body>
+
 </html>
